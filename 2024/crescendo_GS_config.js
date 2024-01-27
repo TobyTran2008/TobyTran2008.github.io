@@ -2,7 +2,7 @@ var config_data = `
 {
   "enable_google_sheets": "true",
   "dataFormat": "tsv",
-  "title": "Scouting PASS 2024",
+  "title": "Scouting PASS 2025",
   "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
