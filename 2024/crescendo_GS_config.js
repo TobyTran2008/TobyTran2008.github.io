@@ -17,7 +17,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn1",
+      "defaultValue": "2023tnkn",
       "required": "true"
     },
     { "name": "Match Level",
