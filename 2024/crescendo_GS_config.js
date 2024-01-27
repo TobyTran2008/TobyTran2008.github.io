@@ -3,7 +3,7 @@ var config_data = `
   "enable_google_sheets": "true",
   "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
-  "page_title": "Crescendo1",
+  "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -17,7 +17,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn",
+      "defaultValue": "2023tnkn1",
       "required": "true"
     },
     { "name": "Match Level",
