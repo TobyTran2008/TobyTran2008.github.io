@@ -229,14 +229,12 @@ function addClickableImage(table, idx, name, data) {
     cell.setAttribute("title", data.tooltip);
   }
 
-/*
   let showFlip = true;
   if (data.hasOwnProperty('showFlip')) {
     if (data.showFlip.toLowerCase() == 'false') {
       showFlip = false;
     }
   }
-*/
 
   let showUndo = true;
   if (data.hasOwnProperty('showUndo')) {
@@ -1367,7 +1365,6 @@ function undo(event) {
   drawFields();
 }
 
-/*
 function flip(event) {
   let flipID = event.firstChild;
   var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
@@ -1378,7 +1375,6 @@ function flip(event) {
   }
   drawFields();
 }
-*/
 
 function displayData(){
   document.getElementById('data').innerHTML = getData(dataFormat);
