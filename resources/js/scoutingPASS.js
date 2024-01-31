@@ -229,12 +229,14 @@ function addClickableImage(table, idx, name, data) {
     cell.setAttribute("title", data.tooltip);
   }
 
+  /*
   let showFlip = false;
   if (data.hasOwnProperty('showFlip')) {
     if (data.showFlip.toLowerCase() == 'false') {
       showFlip = false;
     }
   }
+  */
 
   let showUndo = true;
   if (data.hasOwnProperty('showUndo')) {
@@ -243,7 +245,7 @@ function addClickableImage(table, idx, name, data) {
     }
   }
 
-  if (showFlip || showUndo) {
+  if (showUndo) { // || showFlip) {
     idx += 1
     row = table.insertRow(idx);
     cell = row.insertCell(0);
@@ -261,6 +263,7 @@ function addClickableImage(table, idx, name, data) {
       cell.appendChild(undoButton);
     }
 
+    /*
     if (showFlip) {
       // Flip button
       let flipButton = document.createElement("input");
@@ -274,6 +277,7 @@ function addClickableImage(table, idx, name, data) {
       }
       cell.appendChild(flipButton);
     }
+    */
   }
 
   idx += 1;
@@ -1365,6 +1369,7 @@ function undo(event) {
   drawFields();
 }
 
+/*
 function flip(event) {
   let flipID = event.firstChild;
   var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
@@ -1375,6 +1380,7 @@ function flip(event) {
   }
   drawFields();
 }
+*/
 
 function displayData(){
   document.getElementById('data').innerHTML = getData(dataFormat);
