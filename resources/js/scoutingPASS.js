@@ -263,7 +263,6 @@ function addClickableImage(table, idx, name, data) {
       cell.appendChild(undoButton);
     }
 
-    /*
     if (showFlip) {
       // Flip button
       let flipButton = document.createElement("input");
@@ -277,7 +276,6 @@ function addClickableImage(table, idx, name, data) {
       }
       cell.appendChild(flipButton);
     }
-    */
   }
 
   idx += 1;
