@@ -229,12 +229,14 @@ function addClickableImage(table, idx, name, data) {
     cell.setAttribute("title", data.tooltip);
   }
 
-  let showFlip = false;
+/*
+  let showFlip = true;
   if (data.hasOwnProperty('showFlip')) {
     if (data.showFlip.toLowerCase() == 'false') {
       showFlip = false;
     }
   }
+*/
 
   let showUndo = true;
   if (data.hasOwnProperty('showUndo')) {
@@ -243,12 +245,14 @@ function addClickableImage(table, idx, name, data) {
     }
   }
 
+  /*
   if (showFlip || showUndo) {
     idx += 1
     row = table.insertRow(idx);
     cell = row.insertCell(0);
     cell.setAttribute("colspan", 2);
     cell.setAttribute("style", "text-align: center;");
+    */
 
     if (showUndo) {
       // Undo button
@@ -261,6 +265,7 @@ function addClickableImage(table, idx, name, data) {
       cell.appendChild(undoButton);
     }
 
+    /*
     if (showFlip) {
       // Flip button
       let flipButton = document.createElement("input");
@@ -274,6 +279,7 @@ function addClickableImage(table, idx, name, data) {
       }
       cell.appendChild(flipButton);
     }
+    */
   }
 
   idx += 1;
