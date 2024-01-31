@@ -396,7 +396,7 @@ function addClickableImage(table, idx, name, data) {
   img.setAttribute("hidden", "");
   cell.appendChild(img);
 
-  return idx + 1
+  return idx + 1;
 }
 
 function addText(table, idx, name, data) {
@@ -449,7 +449,7 @@ function addText(table, idx, name, data) {
     cell2.appendChild(def);
   }
 
-  return idx + 1
+  return idx + 1;
 }
 
 function addNumber(table, idx, name, data) {
