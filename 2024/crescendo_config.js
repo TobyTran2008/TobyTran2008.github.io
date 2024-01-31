@@ -77,6 +77,17 @@ var config_data = `
     { "name": "Speaker Scores",
       "code": "ass",
       "type": "counter"
+    }, 
+    { "name": "Pickup From",
+      "code": "tpu",
+      "type": "radio",
+      "choices": {
+        "s": "Source<br>",
+        "f": "Floor<br>",
+        "b": "Both<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x"
     }
   ],
   "teleop": [
@@ -125,17 +136,6 @@ var config_data = `
         "a": "Average<br>",
         "v": "Very Effective<br>",
         "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
       },
       "defaultValue": "x"
     },
