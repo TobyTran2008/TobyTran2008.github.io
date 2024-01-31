@@ -245,14 +245,12 @@ function addClickableImage(table, idx, name, data) {
     }
   }
 
-  /*
   if (showFlip || showUndo) {
     idx += 1
     row = table.insertRow(idx);
     cell = row.insertCell(0);
     cell.setAttribute("colspan", 2);
     cell.setAttribute("style", "text-align: center;");
-    */
 
     if (showUndo) {
       // Undo button
