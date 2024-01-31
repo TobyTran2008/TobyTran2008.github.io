@@ -168,7 +168,7 @@ h2{
     color: white;
 }
 
-.undoButton, .flipButton {
+.undoButton {
     font-family: Alexis;
     background-color: black;
     padding: 10px;
