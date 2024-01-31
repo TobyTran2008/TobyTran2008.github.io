@@ -229,7 +229,7 @@ function addClickableImage(table, idx, name, data) {
     cell.setAttribute("title", data.tooltip);
   }
 
-  let showFlip = true;
+  let showFlip = false;
   if (data.hasOwnProperty('showFlip')) {
     if (data.showFlip.toLowerCase() == 'false') {
       showFlip = false;
