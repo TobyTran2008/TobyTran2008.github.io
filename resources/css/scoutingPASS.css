@@ -113,7 +113,7 @@ h1{
     border-style: groove;
     border-color: white;
     border-width: 2px;
-    font-size: 40px;
+    font-size: 60px;
     padding: 10px;
     font-weight: 350;
 }
@@ -125,7 +125,7 @@ h1{
 h2{
     font-family: Alexis;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 300;
     font-style: italic;
 }
