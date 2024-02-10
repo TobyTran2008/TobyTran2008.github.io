@@ -8,8 +8,7 @@ function setUpGoogleSheets() {
     btn.disabled = true;
     btn.innerHTML = "Sending...";
 
-    /*
-    let fd = getData(false);
+    let fd = getData(true);
     try {
       for (const [key, value] of fd) {
         console.log(`${key}: ${value}\n`);
@@ -17,7 +16,6 @@ function setUpGoogleSheets() {
     } catch (error) {
       console.error('Error iterating over form data:', error);
     }
-    */
 
     fetch(scriptURL, { method: 'POST', body: fd })
       .then(response => response.json())
