@@ -786,10 +786,10 @@ return document.forms.scoutingForm.l.value
 
 
 function validateData() {
-  var ret = true;
-  var errStr = "";
+  let ret = true;
+  let errStr = "";
   for (rf of requiredFields) {
-    var thisRF = document.forms.scoutingForm[rf];
+    let thisRF = document.forms.scoutingForm[rf];
     if (thisRF.value == "[]" || thisRF.value.length == 0) {
       if (rf == "as") {
         rftitle = "Auto Start Position"
