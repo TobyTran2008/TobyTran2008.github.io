@@ -8,7 +8,7 @@ var config_data = `
   "prematch": [
     { "name": "Scouter Initials",
       "code": "s",
-      "gsCol": "scouter",
+      "gsCol": "s",
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
