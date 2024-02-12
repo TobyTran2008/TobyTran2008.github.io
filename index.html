@@ -17,7 +17,7 @@
 	</head>
 
 	<body>
-		<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
+		<form id="scoutingForm" onsubmit="return false" name="scoutingForm" action="https://script.google.com/macros/s/AKfycbxwqbUuJGFQ03tjE4ipOrgV24_jLUZFGG3RAjQsDwu_3iED2YdV2AVhnRrqcgyrB8Fx/exec" method="post">
 			<div id="main-panel-holder">
 				<div id="prematch" class="main-panel" style="background-color: black;">
 					<h1 id="prematchHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
@@ -91,7 +91,8 @@
 					<p></p>
 					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
 					<div id="submitButton">
-						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
+						<!-- <button id="submit" type="submit" class="submitForm">Send to Google Sheets</button> -->
+						<input id="submit" type="submit" value="Send to Google Sheets"></input>
 					</div>
 					<div id="clearButton">
 						<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
