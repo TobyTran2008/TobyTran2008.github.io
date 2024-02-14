@@ -11,7 +11,7 @@ function setUpGoogleSheets() {
     let fd = getData(true);
     try {
       for (const [key, value] of fd) {
-        console.log(`${key}: ${value}\n`);
+        console.log(key, ', ', value);
       }
     } catch (error) {
       console.error('Error iterating over form data:', error);
