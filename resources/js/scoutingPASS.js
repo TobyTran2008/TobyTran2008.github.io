@@ -856,6 +856,7 @@ function getData(dataFormat) {
     });
     return str.join("\t")
   } else {
+    console.log(dataFormat)
     return "unsupported dataFormat"
   }
 }

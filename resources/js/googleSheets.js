@@ -8,10 +8,10 @@ function setUpGoogleSheets() {
     btn.disabled = true;
     btn.innerHTML = "Sending...";
 
-    let fd = getData(true);
+    let fd = getData("tsv");
     try {
       for (const [key, value] of fd) {
-        console.log(key, ', ', value);
+        console.log(`${key}: ${value}\n`);
       }
     } catch (error) {
       console.error('Error iterating over form data:', error);
