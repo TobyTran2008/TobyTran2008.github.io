@@ -1,7 +1,7 @@
 var config_data = `
 {
   "enable_google_sheets": "true",
-  "dataFormat": "tsv",
+  "dataFormat": "csv",
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo",
   "checkboxAs": "10",
