@@ -10,9 +10,17 @@ function setUpGoogleSheets() {
 
     let fd = getData("tsv");
     try {
+      console.log(typeof fd);
+      /*
       for (const [key, value] of fd) {
         console.log(`${key}: ${value}\n`);
+        console.log(value);
       }
+      */
+     let values = fd.split(' ');
+     for (let value of values) {
+      console.log(value);
+     }
     } catch (error) {
       console.error('Error iterating over form data:', error);
     }
@@ -20,9 +28,15 @@ function setUpGoogleSheets() {
     fetch(scriptURL, { method: 'POST', body: fd })
       .then(response => response.json())
       .then(data => {
-        alert('Success!', data);
+        if (data.result === 'success') {
+          console.log('Response Data:', data);
+          alert('Success! Data added to row ' + data.row);
+        } else {
+          alert('Unexpected response: ' + JSON.stringify(data));
+        }
       })
       .catch(error => {
+        console.error("Error: ", error);
         alert('Error!', error.message);
       })
       .finally(() => {

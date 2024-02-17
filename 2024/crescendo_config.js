@@ -83,9 +83,19 @@ var config_data = `
       "gsCol": "aas",
       "type": "counter"
     },
+    { "name": "Amp Missed",
+      "code": "aam",
+      "gsCol": "aam",
+      "type": "counter"
+    },
     { "name": "Speaker Scores",
       "code": "ass",
       "gsCol": "ass",
+      "type": "counter"
+    },
+    { "name": "Speaker Missed",
+      "code": "asm",
+      "gsCol": "asm",
       "type": "counter"
     }
   ],
@@ -95,14 +105,19 @@ var config_data = `
       "gsCol": "tas",
       "type": "counter"
     },
+    { "name": "Amp Missed",
+      "code": "tam",
+      "gsCol": "tam",
+      "type": "counter"
+    },
     { "name": "Speaker Scores",
       "code": "tss",
       "gsCol": "tss",
       "type": "counter"
     },
-    { "name": "Times Amplified",
-      "code": "tta",
-      "gsCol": "tta",
+    { "name": "Speaker Missed",
+      "code": "tsm",
+      "gsCol": "tsm",
       "type": "counter"
     }
   ],
