@@ -1,29 +1,29 @@
 var config_data = `
 {
-  "enable_google_sheets": "true",
   "dataFormat": "tsv",
+  "enable_google_sheets": "true",
   "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
+  "page_title": "ScoutingPASS",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
-      "code": "s",
       "gsCol": "s",
+      "code": "s",
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
       "required": "true"
     },
     { "name": "Event",
-      "code": "e",
       "gsCol": "e",
+      "code": "e",
       "type": "event",
       "defaultValue": "2023tnkn",
       "required": "true"
     },
     { "name": "Match Level",
-      "code": "l",
       "gsCol": "l",
+      "code": "l",
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
@@ -34,16 +34,16 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
-      "code": "m",
       "gsCol": "m",
+      "code": "m",
       "type": "match",
       "min": 1,
       "max": 150,
       "required": "true"
     },
     { "name": "Robot",
-      "code": "r",
       "gsCol": "r",
+      "code": "r",
       "type": "robot",
       "choices": {
         "r1": "Red-1",
@@ -56,15 +56,15 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
-      "code": "t",
       "gsCol": "t",
+      "code": "t",
       "type": "team",
       "min": 1,
       "max": 99999
     },
     { "name": "Auto Start Position",
-      "code": "as",
       "gsCol": "as",
+      "code": "as",
       "type": "clickable_image",
       "filename": "2024/field_image.png",
       "clickRestriction": "one",
@@ -74,57 +74,57 @@ var config_data = `
   ],
   "auton": [
     { "name": "Leave Starting Zone",
-      "code": "al",
       "gsCol": "al",
+      "code": "al",
       "type": "bool"
     },
     { "name": "Amp Scores",
-      "code": "aas",
       "gsCol": "aas",
+      "code": "aas",
       "type": "counter"
     },
     { "name": "Amp Missed",
-      "code": "aam",
       "gsCol": "aam",
+      "code": "aam",
       "type": "counter"
     },
     { "name": "Speaker Scores",
-      "code": "ass",
       "gsCol": "ass",
+      "code": "ass",
       "type": "counter"
     },
     { "name": "Speaker Missed",
-      "code": "asm",
       "gsCol": "asm",
+      "code": "asm",
       "type": "counter"
     }
   ],
   "teleop": [
     { "name": "Amp Scores",
-      "code": "tas",
       "gsCol": "tas",
+      "code": "tas",
       "type": "counter"
     },
     { "name": "Amp Missed",
-      "code": "tam",
       "gsCol": "tam",
+      "code": "tam",
       "type": "counter"
     },
     { "name": "Speaker Scores",
-      "code": "tss",
       "gsCol": "tss",
+      "code": "tss",
       "type": "counter"
     },
     { "name": "Speaker Missed",
-      "code": "tsm",
       "gsCol": "tsm",
+      "code": "tsm",
       "type": "counter"
     }
   ],
   "endgame": [
     { "name": "Final Status",
-      "code": "fs",
       "gsCol": "fs",
+      "code": "fs",
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
@@ -137,15 +137,15 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Note in Trap",
-      "code": "nit",
       "gsCol": "nit",
+      "code": "nit",
       "type": "bool"
     }
   ],
   "postmatch": [
     { "name": "Driver Skill",
-      "code": "ds",
       "gsCol": "ds",
+      "code": "ds",
       "type": "radio",
       "choices": {
         "n": "Not Effective<br>",
@@ -154,22 +154,22 @@ var config_data = `
         "x": "Not Observed"
       },
       "defaultValue": "x"
-    }, 
+    },
     { "name": "Pickup From",
-      "code": "tpu",
       "gsCol": "tpu",
+      "code": "tpu",
       "type": "radio",
       "choices": {
         "s": "Source<br>",
         "f": "Floor<br>",
         "b": "Both<br>",
-        "x": "Not Attempted"
+        "x": "Neither"
       },
       "defaultValue": "x"
     },
     { "name": "Defense Rating",
-      "code": "dr",
       "gsCol": "dr",
+      "code": "dr",
       "type": "radio",
       "choices": {
         "b": "Below Average<br>",
@@ -181,8 +181,8 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Speed Rating",
-      "code": "sr",
       "gsCol": "sr",
+      "code": "sr",
       "type": "radio",
       "choices": {
         "1": "1 (slow)<br>",
@@ -194,29 +194,29 @@ var config_data = `
       "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
-      "code": "die",
       "gsCol": "die",
+      "code": "die",
       "type": "bool"
     },
     { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
       "gsCol": "tip",
+      "code": "tip",
       "type": "bool"
     },
     { "name": "Dropped Notes (>2)",
-      "code": "dn",
       "gsCol": "dn",
+      "code": "dn",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
       "gsCol": "all",
+      "code": "all",
       "type": "bool"
     },
     { "name": "Comments",
-      "code": "co",
       "gsCol": "co",
+      "code": "co",
       "type": "text",
       "size": 15,
       "maxSize": 55

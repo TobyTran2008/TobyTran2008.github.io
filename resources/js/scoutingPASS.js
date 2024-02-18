@@ -229,14 +229,12 @@ function addClickableImage(table, idx, name, data) {
     cell.setAttribute("title", data.tooltip);
   }
 
-  /*
   let showFlip = false;
   if (data.hasOwnProperty('showFlip')) {
     if (data.showFlip.toLowerCase() == 'false') {
       showFlip = false;
     }
   }
-  */
 
   let showUndo = true;
   if (data.hasOwnProperty('showUndo')) {
@@ -245,7 +243,7 @@ function addClickableImage(table, idx, name, data) {
     }
   }
 
-  if (showUndo) { // || showFlip) {
+  if (showFlip || showUndo) {
     idx += 1
     row = table.insertRow(idx);
     cell = row.insertCell(0);
@@ -263,7 +261,6 @@ function addClickableImage(table, idx, name, data) {
       cell.appendChild(undoButton);
     }
 
-    /*
     if (showFlip) {
       // Flip button
       let flipButton = document.createElement("input");
@@ -277,7 +274,6 @@ function addClickableImage(table, idx, name, data) {
       }
       cell.appendChild(flipButton);
     }
-    */
   }
 
   idx += 1;
@@ -400,7 +396,7 @@ function addClickableImage(table, idx, name, data) {
   img.setAttribute("hidden", "");
   cell.appendChild(img);
 
-  return idx + 1;
+  return idx + 1
 }
 
 function addText(table, idx, name, data) {
@@ -453,7 +449,7 @@ function addText(table, idx, name, data) {
     cell2.appendChild(def);
   }
 
-  return idx + 1;
+  return idx + 1
 }
 
 function addNumber(table, idx, name, data) {
@@ -786,10 +782,10 @@ return document.forms.scoutingForm.l.value
 
 
 function validateData() {
-  let ret = true;
-  let errStr = "";
+  var ret = true;
+  var errStr = "";
   for (rf of requiredFields) {
-    let thisRF = document.forms.scoutingForm[rf];
+    var thisRF = document.forms.scoutingForm[rf];
     if (thisRF.value == "[]" || thisRF.value.length == 0) {
       if (rf == "as") {
         rftitle = "Auto Start Position"
@@ -850,13 +846,23 @@ function getData(dataFormat) {
       str.push(thisKey + "=" + fd.get(thisKey))
     });
     return str.join(";")
-  } else if (dataFormat == "tsv") {
+  } else if (dataFormat == "json") {
+    var object = {};
+    fd.forEach(function(value, key){
+        object[key] = value;
+    });
+    return JSON.stringify(object);
+  } else if (dataFormat == "post") {
+    Array.from(fd.keys()).forEach(thisKey => {
+      str.push(encodeURIComponent(thisKey) + "=" + encodeURIComponent(fd.get(thisKey)))
+    });
+    return str.join("&")
+  } else if (dataFormat == "tsv") {   
     Array.from(fd.keys()).forEach(thisKey => {
       str.push(fd.get(thisKey))
     });
     return str.join("\t")
   } else {
-    console.log(dataFormat)
     return "unsupported dataFormat"
   }
 }
@@ -1369,19 +1375,6 @@ function undo(event) {
   changingInput.value = JSON.stringify(tempValue);
   drawFields();
 }
-
-/*
-function flip(event) {
-  let flipID = event.firstChild;
-  var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
-  if (flipImg.style.transform == "") {
-    flipImg.style.transform = 'rotate(180deg)';
-  } else {
-    flipImg.style.transform = '';
-  }
-  drawFields();
-}
-*/
 
 function displayData(){
   document.getElementById('data').innerHTML = getData(dataFormat);

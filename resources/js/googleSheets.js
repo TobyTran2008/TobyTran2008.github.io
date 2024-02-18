@@ -1,80 +1,24 @@
 function setUpGoogleSheets() {
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxwqbUuJGFQ03tjE4ipOrgV24_jLUZFGG3RAjQsDwu_3iED2YdV2AVhnRrqcgyrB8Fx/exec';
-  const form = document.querySelector('#scoutingForm');
-  const btn = document.querySelector('#submit');
+  //const scriptURL = 'https://script.google.com/macros/s/AKfycbx4F5_g5B5AaqgSbzvDmPyEKmD7ciPwCK3miz3mATeeumS0G5gnrWzwJ2ED5k3CYnJ6/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyJ49ZLK4_kblsFHGhwPdeStXWyQykUWVyta0F_xDk2kFAvwJ9tAHC_9F1dI0suY5bo/exec'
+  const form = document.querySelector('#scoutingForm')
+  const btn = document.querySelector('#submit')
 
+  
   form.addEventListener('submit', e => {
-    e.preventDefault();
-    btn.disabled = true;
-    btn.innerHTML = "Sending...";
+    e.preventDefault()
+    btn.disabled = true
+    btn.innerHTML = "Sending..."
 
-    let fd = getData("tsv");
-    try {
-      console.log(typeof fd);
-      /*
-      for (const [key, value] of fd) {
-        console.log(`${key}: ${value}\n`);
-        console.log(value);
-      }
-      */
-     let values = fd.split(' ');
-     for (let value of values) {
-      console.log(value);
-     }
-    } catch (error) {
-      console.error('Error iterating over form data:', error);
-    }
+    let fd = getData('post')
 
-    fetch(scriptURL, { method: 'POST', body: fd })
-      .then(response => response.json())
-      .then(data => {
-        if (data.result === 'success') {
-          console.log('Response Data:', data);
-          alert('Success! Data added to row ' + data.row);
-        } else {
-          alert('Unexpected response: ' + JSON.stringify(data));
-        }
-      })
+    fetch(scriptURL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded'}, body: fd })
+      .then(response => { 
+            alert('Success!', response)})
       .catch(error => {
-        console.error("Error: ", error);
-        alert('Error!', error.message);
-      })
-      .finally(() => {
-        btn.disabled = false;
-        btn.innerHTML = "Send to Google Sheets";
-      });
-  });
+            alert('Error!', error.message)})
+
+    btn.disabled = false
+    btn.innerHTML = "Send to Google Sheets"
+  })
 }
-
-
-/* 
-
-*****OLD CODE*****
-
-function setUpGoogleSheets() {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxwqbUuJGFQ03tjE4ipOrgV24_jLUZFGG3RAjQsDwu_3iED2YdV2AVhnRrqcgyrB8Fx/exec'
-    const form = document.querySelector('#scoutingForm')
-    const btn = document.querySelector('#submit')
- 
-    
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      btn.disabled = true
-      btn.innerHTML = "Sending..."
-
-      let fd = getData(false)
-      for (const [key, value] of fd) {
-        console.log(`${key}: ${value}\n`);
-      }
-
-      fetch(scriptURL, { method: 'POST', body: fd })
-        .then(response => { 
-              alert('Success!', response) })
-        .catch(error => {
-              alert('Error!', error.message)})
-
-      btn.disabled = false
-      btn.innerHTML = "Send to Google Sheets"
-    })
-}
-*/
