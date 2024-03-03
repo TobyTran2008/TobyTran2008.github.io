@@ -218,6 +218,7 @@ var config_data = `
       "gsCol": "co",
       "code": "co",
       "type": "text",
+      "defaultValue": "none",
       "size": 15,
       "maxSize": 55
     }
