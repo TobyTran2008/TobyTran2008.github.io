@@ -9,6 +9,10 @@ var config_data = `
       "code": "t",
       "type": "number"
     },
+    { "name": "Scouter Initials",
+      "code": "s",
+      "type": "number"
+    },
     { "name": "Width",
       "code": "wid",
       "type": "number",
@@ -56,6 +60,7 @@ var config_data = `
       "choices": {
         "n": "Neo<br>",
         "f": "Falcon<br>",
+        "k": "Kraken<br>",
         "c": "CIM<br>",
         "x": "Other<br>"
       },
