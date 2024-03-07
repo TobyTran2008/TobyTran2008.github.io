@@ -18,7 +18,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn",
+      "defaultValue": "",
       "required": "true"
     },
     { "name": "Match Level",
