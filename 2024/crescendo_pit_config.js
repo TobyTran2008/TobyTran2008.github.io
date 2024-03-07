@@ -23,14 +23,22 @@ var config_data = `
       "type": "number",
       "defaultValue": "0"
     },
+    { "name": "Min Height",
+      "code": "mih",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Max Height",
+      "code": "mah",
+      "type": "number",
+      "defaultValue": "0"
+    },
     { "name": "Drivetrain",
       "code": "drv",
       "type": "radio",
       "choices": {
         "s": "Swerve<br>",
-        "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
-        "m": "Mechanum<br>",
+        "t": "Tank<br>",
         "o": "Other"
       },
       "defaultValue": "o"
@@ -41,50 +49,182 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Swerve Ratio",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "L1 (8.14:1)<br>",
-        "2": "L2 (6.75:1)<br>",
-        "3": "L3 (6.12:1)<br>",
-        "4": "L4 (5.14:1)<br>",
-        "o": "Other ratio (put in comments)<br>",
-        "x": "Not Swerve"
-      },
-      "defaultValue":"x"
+    { "name": "Module Type<br> (ie swerve X or SDS)",
+      "code": "mt",
+      "type": "text",
+      "size": 20,
+      "maxSize": 50
     },
-    { "name": "Drivetrain Motor",
-      "code": "mot",
+    { "name": "Scoring Method<br> (ask them)",
+      "code": "sm",
+      "type": "text",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Intake",
+      "code": "i",
       "type": "radio",
       "choices": {
-        "n": "Neo<br>",
-        "f": "Falcon<br>",
-        "k": "Kraken<br>",
-        "c": "CIM<br>",
-        "x": "Other<br>"
+        "gu": "Ground (Under Bumper)<br>",
+        "ga": "Ground (Above Bumper)<br>",
+        "so": "Source<br>"
       },
-      "defaultValue":"x"
+      "defaultValue":"so"
+    },
+    { "name": "Score on Amp?",
+      "code": "sa",
+      "type": "bool"
+    },
+    { "name": "How?",
+      "code": "hsa",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Score on Speaker?",
+      "code": "ss",
+      "type": "bool"
+    },
+    { "name": "Best Shot",
+      "code": "bs",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Farthest Shot",
+      "code": "fs",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Cycles Per Match",
+      "code": "cpm",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Starting Position",
+      "code": "sp",
+      "type": "radio",
+      "choices": {
+        "ns": "Near Source<br>",
+        "is": "Infront of Speaker<br>",
+        "bes": "Below Speaker<br>"
+      },
+      "defaultValue":"ns"
+    },
+    { "name": "Drive Team<br>Experience<br>(Years)",
+      "code": "dte",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Practice<br>This Year",
+      "code": "pty",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Observations(No Questions)<br><br><br>Wiring<br><br><br><br><br><br><br><br><br>",
+      "code": "w",
+      "type": "radio",
+      "choices": {
+        "fa": "Fantastic<br>",
+        "gr": "Great<br>",
+        "go": "Good<br>",
+        "ok": "Okay<br>",
+        "ng": "Not Great<br>",
+        "ba": "Bad<br>",
+        "te": "Terrible<br>"
+      },
+      "defaultValue":"ok"
+    },
+    { "name": "Bumper<br>Quality",
+      "code": "bq",
+      "type": "radio",
+      "choices": {
+        "fa": "Fantastic<br>",
+        "gr": "Great<br>",
+        "go": "Good<br>",
+        "ok": "Okay<br>",
+        "ng": "Not Great<br>",
+        "ba": "Bad<br>",
+        "te": "Terrible<br>"
+      },
+      "defaultValue":"ok"
+    },
+    { "name": "# of Bumpers",
+      "code": "nb",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Reversible<br>Bumpers?",
+      "code": "rb",
+      "type": "bool"
     },
     { "name": "# of Batteries",
       "code": "nob",
       "type": "number"
     },
-    { "name": "Floor pickup Notes",
-      "code": "fpu",
+    { "name": "# of Chargers",
+      "code": "noc",
+      "type": "number"
+    },
+    { "name": "Who Answered",
+      "code": "wa",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Answer<br>Quality",
+      "code": "aq",
+      "type": "radio",
+      "choices": {
+        "fa": "Fantastic<br>",
+        "gr": "Great<br>",
+        "go": "Good<br>",
+        "ok": "Okay<br>",
+        "ng": "Not Great<br>",
+        "ba": "Bad<br>",
+        "te": "Terrible<br>"
+      },
+      "defaultValue":"ok"
+    },
+    { "name": "How Does<br>Robot Operate<br>(Just Try)",
+      "code": "ro",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Potential Failures",
+      "code": "pf",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "How Stable<br>(Just Try)",
+      "code": "s",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "How is Battery<br>Attached",
+      "code": "hba",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
+    { "name": "Take a Picture?<br>(Copy and Paste into<br>Google Sheets)",
+      "gsCol": "all",
+      "code": "all",
       "type": "bool"
-    },
-    { "name": "Autos",
-      "code": "aut",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
-    },
-    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
-      "code": "sct",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
     },
     { "name": "Comments",
       "code": "co",
