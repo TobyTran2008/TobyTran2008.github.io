@@ -7,11 +7,15 @@ var config_data = `
   "prematch": [
     { "name": "Team Number",
       "code": "t",
-      "type": "number"
+      "type": "number",
+      "required": "true"
     },
     { "name": "Scouter Initials",
       "code": "s",
-      "type": "number"
+      "type": "text",
+      "size": 5,
+      "maxSize": 5,
+      "required": "true"
     },
     { "name": "Width",
       "code": "wid",
@@ -86,6 +90,13 @@ var config_data = `
       "code": "ss",
       "type": "bool"
     },
+    { "name": "How?",
+      "code": "hss",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
+    },
     { "name": "Best Shot",
       "code": "bs",
       "type": "text",
@@ -114,6 +125,17 @@ var config_data = `
         "bes": "Below Speaker<br>"
       },
       "defaultValue":"ns"
+    },
+    { "name": "Climb?",
+      "code": "c",
+      "type": "bool"
+    },
+    { "name": "How?",
+      "code": "hc",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
     },
     { "name": "Drive Team<br>Experience<br>(Years)",
       "code": "dte",
@@ -155,10 +177,9 @@ var config_data = `
       },
       "defaultValue":"ok"
     },
-    { "name": "# of Bumpers",
+    { "name": "How are Bumpers<br>Attached?",
       "code": "nb",
-      "type": "number",
-      "defaultValue": "0"
+      "type": "text"
     },
     { "name": "Reversible<br>Bumpers?",
       "code": "rb",
