@@ -243,8 +243,7 @@ var config_data = `
       "maxSize": 100
     },
     { "name": "Take a Picture?<br>(Copy and Paste into<br>Google Sheets)",
-      "gsCol": "all",
-      "code": "all",
+      "code": "p",
       "type": "bool"
     },
     { "name": "Comments",
