@@ -50,6 +50,7 @@ var config_data = `
     { "name": "Other Drivetrain",
       "code": "odt",
       "type": "text",
+      "defaultValue": "N/A",
       "size": 20,
       "maxSize": 50
     },
@@ -65,7 +66,7 @@ var config_data = `
       "size": 20,
       "maxSize": 100
     },
-    { "name": "Intake",
+    { "name": "Main Form<br> of Intake",
       "code": "i",
       "type": "radio",
       "choices": {
@@ -149,17 +150,17 @@ var config_data = `
       "size": 20,
       "maxSize": 100
     },
-    { "name": "Observations(No Questions)<br><br><br>Wiring<br><br><br><br><br><br><br><br><br>",
+    { "name": "Observations(No More Questions)<br><br><br>Wiring<br><br><br><br><br><br><br><br><br>",
       "code": "w",
       "type": "radio",
       "choices": {
-        "fa": "Fantastic<br>",
-        "gr": "Great<br>",
-        "go": "Good<br>",
-        "ok": "Okay<br>",
-        "ng": "Not Great<br>",
-        "ba": "Bad<br>",
-        "te": "Terrible<br>"
+        "fantastic": "Fantastic<br>",
+        "great": "Great<br>",
+        "good": "Good<br>",
+        "okay": "Okay<br>",
+        "not great": "Not Great<br>",
+        "bad": "Bad<br>",
+        "terrible": "Terrible<br>"
       },
       "defaultValue":"ok"
     },
@@ -167,19 +168,20 @@ var config_data = `
       "code": "bq",
       "type": "radio",
       "choices": {
-        "fa": "Fantastic<br>",
-        "gr": "Great<br>",
-        "go": "Good<br>",
-        "ok": "Okay<br>",
-        "ng": "Not Great<br>",
-        "ba": "Bad<br>",
-        "te": "Terrible<br>"
+        "fantastic": "Fantastic<br>",
+        "great": "Great<br>",
+        "good": "Good<br>",
+        "okay": "Okay<br>",
+        "not great": "Not Great<br>",
+        "bad": "Bad<br>",
+        "terrible": "Terrible<br>"
       },
       "defaultValue":"ok"
     },
     { "name": "How are Bumpers<br>Attached?",
       "code": "nb",
-      "type": "text"
+      "type": "text",
+      "defaultValue": "N/A"
     },
     { "name": "Reversible<br>Bumpers?",
       "code": "rb",
@@ -187,11 +189,20 @@ var config_data = `
     },
     { "name": "# of Batteries",
       "code": "nob",
-      "type": "number"
+      "type": "number",
+      "defaultValue": "0"
     },
     { "name": "# of Chargers",
       "code": "noc",
-      "type": "number"
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "How is Battery<br>Attached",
+      "code": "hba",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 100
     },
     { "name": "Who Answered",
       "code": "wa",
@@ -204,13 +215,13 @@ var config_data = `
       "code": "aq",
       "type": "radio",
       "choices": {
-        "fa": "Fantastic<br>",
-        "gr": "Great<br>",
-        "go": "Good<br>",
-        "ok": "Okay<br>",
-        "ng": "Not Great<br>",
-        "ba": "Bad<br>",
-        "te": "Terrible<br>"
+        "fantastic": "Fantastic<br>",
+        "great": "Great<br>",
+        "good": "Good<br>",
+        "okay": "Okay<br>",
+        "not great": "Not Great<br>",
+        "bad": "Bad<br>",
+        "terrible": "Terrible<br>"
       },
       "defaultValue":"ok"
     },
@@ -229,14 +240,7 @@ var config_data = `
       "maxSize": 100
     },
     { "name": "How Stable<br>(Just Try)",
-      "code": "s",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "How is Battery<br>Attached",
-      "code": "hba",
+      "code": "hs",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
@@ -249,6 +253,7 @@ var config_data = `
     { "name": "Comments",
       "code": "co",
       "type": "text",
+      "defaultValue": "none",
       "size": 20,
       "maxSize": 250
     }
