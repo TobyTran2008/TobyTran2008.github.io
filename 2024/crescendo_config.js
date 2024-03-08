@@ -18,7 +18,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "",
+      "defaultValue": "2024SFR",
       "required": "true"
     },
     { "name": "Match Level",
