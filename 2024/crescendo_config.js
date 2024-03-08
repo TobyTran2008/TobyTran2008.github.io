@@ -221,6 +221,11 @@ var config_data = `
       "defaultValue": "none",
       "size": 15,
       "maxSize": 55
+    },
+    { "name": "Didn't Show?",
+      "gsCol": "rh",
+      "code": "rh",
+      "type": "bool"
     }
   ]
 }`;
