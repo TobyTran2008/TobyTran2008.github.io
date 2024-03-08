@@ -220,7 +220,7 @@ var config_data = `
       "type": "text",
       "defaultValue": "none",
       "size": 15,
-      "maxSize": 55
+      "maxSize": 300
     },
     { "name": "Didn't Show?",
       "gsCol": "rh",
