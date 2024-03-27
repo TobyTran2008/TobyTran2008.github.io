@@ -27,8 +27,7 @@ var config_data = `
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
+        "e": "Eliminations<br>"
       },
       "defaultValue": "qm",
       "required": "true"
@@ -129,7 +128,6 @@ var config_data = `
       "choices": {
         "p": "Parked<br>",
         "o": "Onstage<br>",
-        "s": "Onstage (Spotlit)<br>",
         "h": "Harmony<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
@@ -143,17 +141,18 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "gsCol": "ds",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
+    { "name": "Didn't Show?",
+      "gsCol": "rds",
+      "code": "rds",
+      "type": "bool"
+    },
+    { "name": "If played defense, explain: ",
+      "gsCol": "de",
+      "code": "de",
+      "type": "text",
+      "defaultValue": "none",
+      "size": 15,
+      "maxSize": 1000
     },
     { "name": "Pickup From",
       "gsCol": "tpu",
@@ -167,29 +166,14 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Defense Rating",
-      "gsCol": "dr",
-      "code": "dr",
-      "type": "radio",
-      "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
-      },
-      "defaultValue": "x"
-    },
     { "name": "Speed Rating",
       "gsCol": "sr",
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
+        "slow": "Slow<br>",
+        "average": "Average<br>",
+        "fast": "Fast<br>"
       },
       "defaultValue":"3"
     },
@@ -208,12 +192,6 @@ var config_data = `
       "code": "dn",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "gsCol": "all",
-      "code": "all",
-      "type": "bool"
-    },
     { "name": "Comments",
       "gsCol": "co",
       "code": "co",
@@ -221,11 +199,6 @@ var config_data = `
       "defaultValue": "none",
       "size": 15,
       "maxSize": 1000
-    },
-    { "name": "Didn't Show?",
-      "gsCol": "rh",
-      "code": "rh",
-      "type": "bool"
     }
   ]
 }`;
