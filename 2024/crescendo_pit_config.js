@@ -4,7 +4,7 @@ var config_data = `
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo",
   "pitConfig": "true",
-  "prematch": [
+  "background": [
     { "name": "Team Number",
       "code": "t",
       "type": "number",
@@ -19,6 +19,11 @@ var config_data = `
     },
     { "name": "Width",
       "code": "wid",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Length",
+      "code": "len",
       "type": "number",
       "defaultValue": "0"
     },
@@ -60,21 +65,64 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Scoring Method<br> (ask them)",
-      "code": "sm",
+    { "name": "Drive Team<br>Experience<br>(Years)",
+      "code": "dte",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Practice<br>This Year",
+      "code": "pty",
       "type": "text",
+      "defaultValue": "N/A",
       "size": 20,
       "maxSize": 100
     },
-    { "name": "Main Form<br> of Intake",
-      "code": "i",
+    { "name": "How are Bumpers<br>Attached?",
+      "code": "nb",
+      "type": "text",
+      "defaultValue": "N/A"
+    },
+    { "name": "Reversible<br>Bumpers?",
+      "code": "rb",
+      "type": "bool"
+    },
+    { "name": "Are Bumpers<br>Secure?",
+      "code": "bs",
+      "type": "bool"
+    },
+    { "name": "# of Batteries",
+      "code": "nob",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "# of Chargers",
+      "code": "noc",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Battery Connector Zip Tied?",
+      "code": "bz",
+      "type": "bool"
+    },
+    { "name": "Is Battery<br>in Secure<br>Spot?",
+      "code": "bas",
+      "type": "bool"
+    }
+  ],
+  "Amp&Speaker": [
+    { "name": "Intake From Ground?",
+      "code": "ifg",
       "type": "radio",
       "choices": {
-        "gu": "Ground (Under Bumper)<br>",
-        "ga": "Ground (Above Bumper)<br>",
-        "so": "Source<br>"
+        "Under Bumper": "Under Bumper<br>",
+        "Above Bumper": "Above Bumper<br>",
+        "No": "No<br>"
       },
-      "defaultValue":"so"
+      "defaultValue":"No"
+    },
+    { "name": "Intake From Source?",
+      "code": "ifs",
+      "type": "bool"
     },
     { "name": "Score on Amp?",
       "code": "sa",
@@ -82,10 +130,25 @@ var config_data = `
     },
     { "name": "How?",
       "code": "hsa",
+      "type": "radio",
+      "choices": {
+        "Side Rollers": "Side Rollers<br>",
+        "Top/Bottom Rollers": "Top/Bottom Rollers<br>",
+        "Claw": "Claw<br>",
+        "Other": "Other<br>"
+      },
+      "defaultValue":"Other"
+    },
+    { "name": "LimeLight Aim?",
+      "code": "ala",
+      "type": "bool"
+    },
+    { "name": "Comments (Other<br>type, Uneven Wheel<br>Size, Aiming<br>etc.)",
+      "code": "aco",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
-      "maxSize": 100
+      "maxSize": 1000
     },
     { "name": "Score on Speaker?",
       "code": "ss",
@@ -93,30 +156,74 @@ var config_data = `
     },
     { "name": "How?",
       "code": "hss",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
+      "type": "radio",
+      "choices": {
+        "Side Rollers": "Side Rollers<br>",
+        "Top/Bottom Rollers": "Top/Bottom Rollers<br>",
+        "Other": "Other<br>"
+      },
+      "defaultValue":"Other"
     },
-    { "name": "Best Shot",
-      "code": "bs",
+    { "name": "LimeLight Aim?",
+      "code": "sla",
+      "type": "bool"
+    },
+    { "name": "Comments (Other<br>type, Uneven Wheel<br>Size, Aiming<br>etc.)",
+      "code": "sco",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
-      "maxSize": 100
+      "maxSize": 1000
+    },
+    { "name": "How Note Travels<br>Through Robot<br>(intake to scoring)",
+      "code": "hnt",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 1000
+    },
+    { "name": "Most Common<br>Speaker Shot?",
+      "code": "mcs",
+      "type": "radio",
+      "choices": {
+        "Subwoofer": "Subwoofer<br>",
+        "Podium": "Podium<br>",
+        "Between Stage & Amp": "Between<br>Stage & Amp<br>",
+        "Between Stage & Source": "Between<br>Stage & Source<br>",
+        "Other": "Other<br>",
+        "No": "No<br>"
+      },
+      "defaultValue":"No"
+    },
+    { "name": "Comments",
+      "code": "ssco",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 1000
     },
     { "name": "Farthest Shot",
       "code": "fs",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
-      "maxSize": 100
+      "maxSize": 1000
+    },
+
+    { "name": "Comments",
+      "code": "fsco",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 1000
     },
     { "name": "Cycles Per Match",
       "code": "cpm",
       "type": "number",
       "defaultValue": "0"
     },
+  ],
+  "OverallStrategy": [
     { "name": "Starting Position",
       "code": "sp",
       "type": "radio",
@@ -131,138 +238,67 @@ var config_data = `
       "code": "c",
       "type": "bool"
     },
-    { "name": "How?",
+    { "name": "How (LimeLight,<br>Extend Mechanism,<br>Pull Up)?",
       "code": "hc",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
-      "maxSize": 100
+      "maxSize": 1000
     },
-    { "name": "Drive Team<br>Experience<br>(Years)",
-      "code": "dte",
+    { "name": "Climb Time<br>(Seconds)",
+      "code": "ct",
       "type": "number",
       "defaultValue": "0"
     },
-    { "name": "Practice<br>This Year",
-      "code": "pty",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "Observations(No More Questions)<br><br><br>Wiring<br><br><br><br><br><br><br><br><br>",
-      "code": "w",
-      "type": "radio",
-      "choices": {
-        "fantastic": "Fantastic<br>",
-        "great": "Great<br>",
-        "good": "Good<br>",
-        "okay": "Okay<br>",
-        "not great": "Not Great<br>",
-        "bad": "Bad<br>",
-        "terrible": "Terrible<br>"
-      },
-      "defaultValue":"ok"
-    },
-    { "name": "Bumper<br>Quality",
-      "code": "bq",
-      "type": "radio",
-      "choices": {
-        "fantastic": "Fantastic<br>",
-        "great": "Great<br>",
-        "good": "Good<br>",
-        "okay": "Okay<br>",
-        "not great": "Not Great<br>",
-        "bad": "Bad<br>",
-        "terrible": "Terrible<br>"
-      },
-      "defaultValue":"ok"
-    },
-    { "name": "How are Bumpers<br>Attached?",
-      "code": "nb",
-      "type": "text",
-      "defaultValue": "N/A"
-    },
-    { "name": "Reversible<br>Bumpers?",
-      "code": "rb",
+    { "name": "Climb With<br>Other Robots?",
+      "code": "cwr",
       "type": "bool"
     },
-    { "name": "# of Batteries",
-      "code": "nob",
-      "type": "number",
-      "defaultValue": "0"
-    },
-    { "name": "# of Chargers",
-      "code": "noc",
-      "type": "number",
-      "defaultValue": "0"
-    },
-    { "name": "How is Battery<br>Attached",
-      "code": "hba",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "Who Answered",
-      "code": "wa",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "Answer<br>Quality",
-      "code": "aq",
-      "type": "radio",
-      "choices": {
-        "fantastic": "Fantastic<br>",
-        "great": "Great<br>",
-        "good": "Good<br>",
-        "okay": "Okay<br>",
-        "not great": "Not Great<br>",
-        "bad": "Bad<br>",
-        "terrible": "Terrible<br>"
-      },
-      "defaultValue":"ok"
-    },
-    { "name": "How Does<br>Robot Operate<br>(Just Try)",
-      "code": "ro",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "Potential Failures",
-      "code": "pf",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "How Stable<br>(Just Try)",
-      "code": "hs",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 100
-    },
-    { "name": "Take a Picture?<br>(Copy and Paste into<br>Google Sheets)",
-      "code": "p",
+    { "name": "Trap?",
+      "code": "tr",
       "type": "bool"
     },
-    { "name": "Comments",
-      "code": "co",
+    { "name": "How?",
+      "code": "ht",
+      "type": "bool"
+    },
+    { "name": "Describe Usual<br?Auto",
+      "code": "dua",
       "type": "text",
-      "defaultValue": "none",
+      "defaultValue": "N/A",
       "size": 20,
-      "maxSize": 250
+      "maxSize": 5000
+    },
+    { "name": "Describe Usual<br>Teleop",
+      "code": "dut",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 5000
     }
   ],
-  "auton": [
-  ],
-  "teleop": [
-  ],
-  "endgame": [
+  "Wrap Up<br>(No Questions)": [
+    { "name": "Knowledgeable<br>About Robot?",
+      "code": "kab",
+      "type": "radio",
+      "choices": {
+        "Yes": "Yes<br>",
+        "Ok": "Okay<br>",
+        "Bad": "Bad<br>"
+      },
+      "defaultValue":"Yes"
+    },
+    { "name": "Coopertive<br>(friendly)?",
+      "code": "fri",
+      "type": "bool"
+    },
+    { "name": "Final Comments?",
+      "code": "fco",
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 5000
+    }
   ],
   "postmatch": [
   ]
