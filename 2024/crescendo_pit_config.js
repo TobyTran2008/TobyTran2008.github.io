@@ -4,7 +4,7 @@ var config_data = `
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo",
   "pitConfig": "true",
-  "background": [
+  "prematch": [
     { "name": "Team Number",
       "code": "t",
       "type": "number",
@@ -107,9 +107,7 @@ var config_data = `
     { "name": "Is Battery<br>in Secure<br>Spot?",
       "code": "bas",
       "type": "bool"
-    }
-  ],
-  "Amp&Speaker": [
+    },
     { "name": "Intake From Ground?",
       "code": "ifg",
       "type": "radio",
@@ -209,7 +207,6 @@ var config_data = `
       "size": 20,
       "maxSize": 1000
     },
-
     { "name": "Comments",
       "code": "fsco",
       "type": "text",
@@ -222,17 +219,9 @@ var config_data = `
       "type": "number",
       "defaultValue": "0"
     },
-  ],
-  "OverallStrategy": [
-    { "name": "Starting Position",
-      "code": "sp",
-      "type": "radio",
-      "choices": {
-        "ns": "Near Source<br>",
-        "is": "Infront of Speaker<br>",
-        "bes": "Below Speaker<br>"
-      },
-      "defaultValue":"ns"
+    { "name": "Draw Autos?",
+      "code": "da",
+      "type": "bool"
     },
     { "name": "Climb?",
       "code": "c",
@@ -275,30 +264,34 @@ var config_data = `
       "defaultValue": "N/A",
       "size": 20,
       "maxSize": 5000
-    }
-  ],
-  "Wrap Up<br>(No Questions)": [
+    },
     { "name": "Knowledgeable<br>About Robot?",
-      "code": "kab",
-      "type": "radio",
-      "choices": {
-        "Yes": "Yes<br>",
-        "Ok": "Okay<br>",
-        "Bad": "Bad<br>"
-      },
-      "defaultValue":"Yes"
+    "code": "kab",
+    "type": "radio",
+    "choices": {
+      "Yes": "Yes<br>",
+      "Ok": "Okay<br>",
+      "Bad": "Bad<br>"
     },
-    { "name": "Coopertive<br>(friendly)?",
-      "code": "fri",
-      "type": "bool"
-    },
-    { "name": "Final Comments?",
-      "code": "fco",
-      "type": "text",
-      "defaultValue": "N/A",
-      "size": 20,
-      "maxSize": 5000
-    }
+    "defaultValue":"Yes"
+  },
+  { "name": "Coopertive<br>(friendly)?",
+    "code": "fri",
+    "type": "bool"
+  },
+  { "name": "Final Comments?",
+    "code": "fco",
+    "type": "text",
+    "defaultValue": "N/A",
+    "size": 20,
+    "maxSize": 5000
+  }
+  ],
+  "auton": [ 
+  ],
+  "teleop": [
+  ],
+  "endgame": [
   ],
   "postmatch": [
   ]
