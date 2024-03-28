@@ -26,8 +26,8 @@ var config_data = `
       "code": "l",
       "type": "level",
       "choices": {
-        "qm": "Quals<br>",
-        "e": "Eliminations<br>"
+        "quals": "Quals<br>",
+        "elims": "Eliminations<br>"
       },
       "defaultValue": "qm",
       "required": "true"
@@ -159,12 +159,12 @@ var config_data = `
       "code": "tpu",
       "type": "radio",
       "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Neither"
+        "source": "Source<br>",
+        "floor": "Floor<br>",
+        "both": "Both<br>",
+        "neither": "Neither"
       },
-      "defaultValue": "x"
+      "defaultValue": "neither"
     },
     { "name": "Speed Rating",
       "gsCol": "sr",
