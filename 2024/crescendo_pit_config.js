@@ -46,9 +46,9 @@ var config_data = `
       "code": "drv",
       "type": "radio",
       "choices": {
-        "s": "Swerve<br>",
-        "t": "Tank<br>",
-        "o": "Other"
+        "swerve": "Swerve<br>",
+        "tank": "Tank<br>",
+        "other": "Other"
       },
       "defaultValue": "o"
     },
@@ -137,7 +137,7 @@ var config_data = `
       },
       "defaultValue":"Other"
     },
-    { "name": "LimeLight Aim?",
+    { "name": "LimeLight Aim Amp?",
       "code": "ala",
       "type": "bool"
     },
@@ -162,7 +162,7 @@ var config_data = `
       },
       "defaultValue":"Other"
     },
-    { "name": "LimeLight Aim?",
+    { "name": "LimeLight Aim Speaker?",
       "code": "sla",
       "type": "bool"
     },
@@ -193,21 +193,21 @@ var config_data = `
       },
       "defaultValue":"No"
     },
-    { "name": "Comments",
+    { "name": "Comments<br>(Speaker Shot)",
       "code": "ssco",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
       "maxSize": 1000
     },
-    { "name": "Farthest Shot",
+    { "name": "Farthest Shot<br>(Meters)",
       "code": "fs",
       "type": "text",
       "defaultValue": "N/A",
       "size": 20,
       "maxSize": 1000
     },
-    { "name": "Comments",
+    { "name": "Comments<br>(Farthest Shot)",
       "code": "fsco",
       "type": "text",
       "defaultValue": "N/A",
@@ -249,9 +249,12 @@ var config_data = `
     },
     { "name": "How?",
       "code": "ht",
-      "type": "bool"
+      "type": "text",
+      "defaultValue": "N/A",
+      "size": 20,
+      "maxSize": 1000
     },
-    { "name": "Describe Usual<br?Auto",
+    { "name": "Describe Usual<br>Auto",
       "code": "dua",
       "type": "text",
       "defaultValue": "N/A",
@@ -269,7 +272,7 @@ var config_data = `
     "code": "kab",
     "type": "radio",
     "choices": {
-      "Yes": "Yes<br>",
+      "Good": "Yes<br>",
       "Ok": "Okay<br>",
       "Bad": "Bad<br>"
     },
