@@ -70,6 +70,7 @@ html, body{
 .field-image-src{
     background-position: center;
     border: 1px solid;
+    transform: rotate(180deg);
 }
 
 .main-panel{
