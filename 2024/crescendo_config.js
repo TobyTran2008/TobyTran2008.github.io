@@ -18,7 +18,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "2024SSD",
+      "defaultValue": "2024MadTown",
       "required": "true"
     },
     { "name": "Match Level",
