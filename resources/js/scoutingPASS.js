@@ -792,6 +792,17 @@ function resetRobot() {
 for ( rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
+function resetComment() {
+for ( co of document.getElementsByName('c')) { c.value = "none"};
+}
+
+function resetALR() {
+for ( co of document.getElementsByName('alr')) { c.value = 0};
+}
+
+function resetTeam() {
+for ( co of document.getElementsByName('t')) { c.value = ""};
+}
 
 function getLevel(){
 return document.forms.scoutingForm.l.value
@@ -917,6 +928,7 @@ function qr_clear() {
 function clearForm() {
   var match = 0;
   var e = 0;
+  var team = 0;
 
   if (pitScouting) {
     swipePage(-1);
@@ -932,7 +944,13 @@ function clearForm() {
     }
 
     // Robot
-    resetRobot()
+    //resetRobot() requested to not reset robot
+
+    // Comment
+    resetComment()
+
+    // ALR
+    resetALR()
   }
 
   // Clear XY coordinates

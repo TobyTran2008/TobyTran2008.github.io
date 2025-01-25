@@ -104,6 +104,10 @@ var config_data = `
     }
   ],
   "teleop": [
+    { "name": "Barge Timer",
+      "code": "ebt",
+      "type": "timer"
+    },
     { "name": "Coral L1",
       "code": "tc1",
       "type": "counter"
@@ -142,6 +146,18 @@ var config_data = `
     { "name": "Scored in<br>Opponent<br>Processor",
       "code": "opp",
       "type": "bool"
+    },
+    { "name": "Final Robot Status",
+      "code": "efs",
+      "type":"radio",
+      "choices": {
+        "bp": "Parked<br>",
+        "ba": "Parked/Failed Climb<br>",
+        "bs": "Shallow Cage<br>",
+        "bd": "Deep Cage<br>",
+        "x": "Not attempted"
+      },
+      "defaultValue": "x"
     }
   ],
   "endgame": [
@@ -231,6 +247,7 @@ var config_data = `
       "type": "bool"
     },
     { "name": "Comments",
+      "defaultValue": "none",
       "code": "co",
       "type": "text",
       "size": 15,
