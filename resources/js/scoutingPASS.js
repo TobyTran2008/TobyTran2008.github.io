@@ -70,6 +70,7 @@ function addTimer(table, idx, name, data) {
   button1.setAttribute("id", "start_" + data.code);
   button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "timer(this.parentElement)");
+  button1.setAttribute("class", "adding");
   button1.setAttribute("value", "Start");
   cell.appendChild(button1);
 
@@ -88,7 +89,7 @@ function addTimer(table, idx, name, data) {
       inp.setAttribute("name", data.code);
     }
   }
-  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
+  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center; height: 43px; font-size: 24px;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
   inp.setAttribute("size", 7);
@@ -97,6 +98,7 @@ function addTimer(table, idx, name, data) {
 
   var button2 = document.createElement("input");
   button2.setAttribute("id", "clear_" + data.code);
+  button2.setAttribute("style", "height: 45px");
   button2.setAttribute("type", "button");
   button2.setAttribute("onclick", "resetTimer(this.parentElement)");
   button2.setAttribute("value", "Reset");
@@ -1377,6 +1379,7 @@ function timer(event) {
   if (statusValue == 'stopped') {
     timerStatus.value = 'started';
     startButton.setAttribute("value", "Stop");
+    startButton.setAttribute("class", "subtracting");
 
     var intId = setInterval(() => {
       if (document.getElementById("status" + tId).value == 'started') {
@@ -1391,6 +1394,7 @@ function timer(event) {
   } else {
     timerStatus.value = 'stopped';
     startButton.setAttribute("value", "Start");
+    startButton.setAttribute("class", "adding");
 
     clearInterval(intervalId);
     intervalIdField.value = '';

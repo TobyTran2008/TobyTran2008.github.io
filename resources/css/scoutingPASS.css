@@ -45,19 +45,13 @@ html, body{
 .adding {
     background-color: lightgreen;
     height: 45px;
-    width: 45px;
+    width: 55px;
 }
 
 .subtracting {
     background-color: lightcoral;
     height: 45px;
-    width: 45px;
-}
-
-.input {
-    height: 43px;
-    width: 65px;
-    font-size: 24px;
+    width: 55px;
 }
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
