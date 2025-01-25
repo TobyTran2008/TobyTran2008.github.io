@@ -201,6 +201,17 @@ var config_data = `
       },
       "defaultValue": "x"
     },
+    { "name": "Human Player Skill",
+      "code": "hps",
+      "type": "radio",
+      "choices": {
+        "n": "Not Effective<br>",
+        "a": "Average<br>",
+        "v": "Very Effective<br>",
+        "x": "Not Observed"
+      },
+      "defaultValue": "x"
+    },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",

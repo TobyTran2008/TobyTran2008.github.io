@@ -167,6 +167,7 @@ function addCounter(table, idx, name, data) {
 
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
+  button1.setAttribute("class", "subtracting");
   button1.setAttribute("id", "minus_" + data.code);
   button1.setAttribute("onclick", "counter(this.parentElement, -1)");
   button1.setAttribute("value", "-");
@@ -181,7 +182,7 @@ function addCounter(table, idx, name, data) {
   } else {
     inp.setAttribute("name", data.code);
   }
-  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
+  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;height: 43px;width: 65px;font-size: 24px");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
   inp.setAttribute("size", 2);
@@ -190,6 +191,7 @@ function addCounter(table, idx, name, data) {
 
   var button2 = document.createElement("input");
   button2.setAttribute("type", "button");
+  button2.setAttribute("class", "adding");
   button2.setAttribute("id", "plus_" + data.code);
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
