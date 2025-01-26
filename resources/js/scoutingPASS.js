@@ -155,6 +155,7 @@ function addCounter(table, idx, name, data) {
   var cell1 = row.insertCell(0);
   cell1.style.width = ColWidth;
   cell1.classList.add("title");
+  cell1.setAttribute("style", "text-align: right; margin-left: 30px;");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
@@ -166,10 +167,12 @@ function addCounter(table, idx, name, data) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
+  cell2.setAttribute("style", "width: 275px");
 
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
   button1.setAttribute("class", "subtracting");
+  button1.classList.add("toTheLeft");
   button1.setAttribute("id", "minus_" + data.code);
   button1.setAttribute("onclick", "counter(this.parentElement, -1)");
   button1.setAttribute("value", "-");
@@ -185,6 +188,7 @@ function addCounter(table, idx, name, data) {
     inp.setAttribute("name", data.code);
   }
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;height: 43px;width: 65px;font-size: 24px");
+  inp.classList.add("toTheLeft");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
   inp.setAttribute("size", 2);
@@ -194,6 +198,8 @@ function addCounter(table, idx, name, data) {
   var button2 = document.createElement("input");
   button2.setAttribute("type", "button");
   button2.setAttribute("class", "adding");
+  button2.setAttribute("style", "margin-right: 40px");
+  button2.classList.add("toTheLeft");
   button2.setAttribute("id", "plus_" + data.code);
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
