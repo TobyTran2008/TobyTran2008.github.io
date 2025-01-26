@@ -167,7 +167,7 @@ function addCounter(table, idx, name, data) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
-  cell2.setAttribute("style", "width: 275px");
+  cell2.setAttribute("style", "width: 400px");
 
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
