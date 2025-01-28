@@ -800,11 +800,7 @@ for ( rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
 function resetComment() {
-for ( co of document.getElementsByName('co')) { co.c = "none"};
-}
-
-function resetALR() {
-for ( alr of document.getElementsByName('alr')) { alr.value = 0};
+for ( co of document.getElementsByName('co')) { co.value = "none"};
 }
 
 function getLevel(){
@@ -931,6 +927,9 @@ function qr_clear() {
 function clearForm() {
   var match = 0;
   var e = 0;
+  
+  // Comment
+  resetComment()
 
   if (pitScouting) {
     swipePage(-1);
@@ -947,9 +946,6 @@ function clearForm() {
 
     // Robot
     //resetRobot() requested to not reset robot
-
-    // Comment
-    resetComment()
 
     // ALR
     resetALR()
