@@ -800,15 +800,11 @@ for ( rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
 function resetComment() {
-for ( co of document.getElementsByName('c')) { c.value = "none"};
+for ( co of document.getElementsByName('co')) { co.c = "none"};
 }
 
 function resetALR() {
-for ( co of document.getElementsByName('alr')) { c.value = 0};
-}
-
-function resetTeam() {
-for ( co of document.getElementsByName('t')) { c.value = ""};
+for ( alr of document.getElementsByName('alr')) { alr.value = 0};
 }
 
 function getLevel(){
@@ -935,7 +931,6 @@ function qr_clear() {
 function clearForm() {
   var match = 0;
   var e = 0;
-  var team = 0;
 
   if (pitScouting) {
     swipePage(-1);

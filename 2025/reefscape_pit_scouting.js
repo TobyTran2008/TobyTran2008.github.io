@@ -32,6 +32,7 @@ var config_data = `
       "defaultValue": "o"
     },
     { "name": "Other Drivetrain",
+      "defaultValue": "N/A",
       "code": "odt",
       "type": "text",
       "size": 20,
@@ -74,18 +75,21 @@ var config_data = `
       "type": "bool"
     },
     { "name": "Autos",
+      "defaultValue": "N/A",
       "code": "aut",
       "type": "text",
       "size": 20,
       "maxSize": 250
     },
     { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
+      "defaultValue": "N/A",
       "code": "sct",
       "type": "text",
       "size": 20,
       "maxSize": 250
     },
     { "name": "Comments",
+      "defaultValue": "N/A",
       "code": "co",
       "type": "text",
       "size": 20,
