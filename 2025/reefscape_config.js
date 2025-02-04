@@ -1,14 +1,14 @@
 var config_data = `
 {
-  "enable_google_sheets": "true",
   "dataFormat": "tsv",
+  "enable_google_sheets": "true",
   "title": "Scouting PASS 2025",
-  "page_title": "REEFSCAPE",
+  "page_title": "testing",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
-      "code": "s",
       "gsCol": "s",
+      "code": "s",
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
