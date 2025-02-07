@@ -155,6 +155,17 @@ var config_data = `
       "gsCol": "tns",
       "type": "counter"
     },
+    { "name": "L1 Coral Stack",
+      "code": "cs",
+      "gsCol": "cs",
+      "type": "radio",
+      "choices": {
+        "tw": "Two<br>",
+        "th": "Three<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x"
+    },
     { "name": "Pickup From",
       "code": "tpu",
       "gsCol": "tpu",
@@ -288,3 +299,9 @@ var config_data = `
     }
   ]
 }`;
+
+/*
+Things to add:
+- pickup level checkboxes (coral and algae)
+
+*/
