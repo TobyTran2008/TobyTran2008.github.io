@@ -70,7 +70,7 @@ var config_data = `
       "clickRestriction": "one",
       "dimensions": "6 6",
       "allowableResponses": "1 7 13 19 25 31",
-      "shape": "circle 5 black red true"
+      "shape": "circle 10 black lightgreen true"
     }
   ],
   "auton": [
@@ -99,14 +99,14 @@ var config_data = `
       "gsCol": "ac4",
       "type": "counter"
     },
-    { "name": "Auto Scoring Position",
+    { "name": "Auto Scoring Position<br>(Click inside of red line)",
       "code": "asp",
       "gsCol": "asp",
       "type": "clickable_image",
       "filename": "2025/reef.png",
       "dimensions": "6 6",
-      "allowableResponses": "8 10 17 19 27 28",
-      "shape": "circle 5 black lightblue true"
+      "allowableResponses": "8 9 10 11 14 17 20 23 26 27 28 29",
+      "shape": "circle 10 black lightgreen true"
     },
     { "name": "Processor Score",
       "code": "aps",
