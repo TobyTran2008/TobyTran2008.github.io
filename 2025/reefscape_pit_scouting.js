@@ -132,7 +132,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 20,
-      "maxSize": 250
+      "maxSize": 100000
     }
   ],
   "auton": [
