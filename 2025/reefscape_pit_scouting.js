@@ -5,6 +5,11 @@ var config_data = `
   "page_title": "REEFSCAPE",
   "pitConfig": "true",
   "prematch": [
+    {
+      "name": "Scouter",
+      "code": "s",
+      "type": "text"
+    },
     { "name": "Team Number",
       "code": "t",
       "type": "number"
@@ -38,18 +43,30 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Swerve Ratio",
-      "code": "sr",
+    { "name": "Drive Team Experience (years)",
+      "code": "dte",
+      "type": "number"
+    },
+    {
+      "name": "Max Coral Lvl",
+      "code": "mcl",
+      "type": "number"
+    },
+    {
+      "name": "Cycles Per Match",
+      "code": "cpm",
+      "type": "number"
+    },
+    {
+      "name": "Climb",
+      "code": "cli",
       "type": "radio",
       "choices": {
-        "1": "L1 (8.14:1)<br>",
-        "2": "L2 (6.75:1)<br>",
-        "3": "L3 (6.12:1)<br>",
-        "4": "L4 (5.14:1)<br>",
-        "o": "Other ratio (put in comments)<br>",
-        "x": "Not Swerve"
+        "d": "Deep Cage<br>",
+        "s": "Shallow Cage<br>",
+        "x": "No climb<br>"
       },
-      "defaultValue":"x"
+      "defaultValue": "x"
     },
     { "name": "Drivetrain Motor",
       "code": "mot",
@@ -66,15 +83,37 @@ var config_data = `
       "code": "nob",
       "type": "number"
     },
+    { "name": "Secure Battery",
+      "code": "sb",
+      "type": "bool"
+    },
+    { "name": "Camera",
+      "code": "cam",
+      "type": "bool"
+    },
+    { "name": "Trough Scoring",
+      "code": "ts",
+      "type": "bool"
+    },
     { "name": "Floor pickup Coral",
-      "code": "fpu",
+      "code": "fpc",
+      "type": "bool"
+    },
+    {
+      "name": "Net algae",
+      "code": "na",
+      "type": "bool"
+    },
+    {
+      "name": "Processor algae",
+      "code": "pa",
       "type": "bool"
     },
     { "name": "Floor pickup Algae",
       "code": "fpa",
       "type": "bool"
     },
-    { "name": "Autos",
+    { "name": "Best Consistent Auto",
       "defaultValue": "N/A",
       "code": "aut",
       "type": "text",
