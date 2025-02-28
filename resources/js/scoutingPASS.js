@@ -799,10 +799,6 @@ function resetRobot() {
 for ( rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
-function resetComment() {
-for ( co of document.getElementsByName('co')) { co.value = "none"};
-}
-
 function getLevel(){
 return document.forms.scoutingForm.l.value
 }
@@ -927,9 +923,6 @@ function qr_clear() {
 function clearForm() {
   var match = 0;
   var e = 0;
-  
-  // Comment
-  resetComment()
 
   if (pitScouting) {
     swipePage(-1);
@@ -943,12 +936,6 @@ function clearForm() {
     } else {
       document.getElementById("input_m").value = match + 1
     }
-
-    // Robot
-    //resetRobot() requested to not reset robot
-
-    // ALR
-    resetALR()
   }
 
   // Clear XY coordinates
@@ -1012,7 +999,7 @@ function clearForm() {
             }
           }
         } else {
-          e.value = ""
+          e.value = "none";
         }
       } else if (e.type == "checkbox") {
         if (e.checked == true) {
