@@ -1,9 +1,8 @@
 var config_data = `
 {
   "dataFormat": "tsv",
-  "enable_google_sheets": "true",
   "title": "Scouting PASS 2025",
-  "page_title": "testing",
+  "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
