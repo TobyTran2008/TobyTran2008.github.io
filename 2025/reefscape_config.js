@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "e",
       "type": "event",
-      "defaultValue": "2025Pinnacles",
+      "defaultValue": "2025SFR",
       "required": "true"
     },
     { "name": "Match Level",
@@ -302,5 +302,5 @@ var config_data = `
 /*
 Things to add:
 - pickup level checkboxes (coral and algae)
-
+- add missed coral for auto
 */
